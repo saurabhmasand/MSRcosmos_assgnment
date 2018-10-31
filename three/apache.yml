@@ -1,0 +1,16 @@
+---
+- hosts: msr1
+  tasks:
+    - name: Build Apache image
+      docker_image:
+        path: ./docker_apache
+        name: saurabhsingh030892/my-apache
+        push: yes
+
+    - name: Run apache container
+      docker_container:
+        name: my-apache1 
+        image: saurabhsingh030892/my-apache
+        ports:
+          - "80:80"    
+

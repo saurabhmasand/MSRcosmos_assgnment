@@ -1,0 +1,8 @@
+---
+ - hosts: servers
+   tasks:
+    - name: install openssl
+      apt:
+        name: openssl
+        state: latest
+        update_cache: yes

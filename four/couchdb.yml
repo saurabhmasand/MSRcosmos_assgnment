@@ -1,0 +1,13 @@
+---
+- hosts: msr2
+  tasks:
+    - name: Pull couchdb Image
+      docker_image:
+        name: tutum/couchdb
+
+    - name: Run couchdb container
+      docker_container:
+        name: couchdb1
+        image: tutum/couchdb
+        ports:
+           - "5984:5984"
