@@ -22,12 +22,3 @@ resource "digitalocean_droplet" "web2" {
   ssh_keys = ["${digitalocean_ssh_key.default.id}"]
 }
 
-# Create a new Droplet using the SSH key - for Ansible Master
-resource "digitalocean_droplet" "web3" {
-  image    = "ubuntu-18-04-x64"
-  name     = "MSR-master"
-  region   = "blr1"
-  size     = "s-1vcpu-1gb"
-  ssh_keys = ["${digitalocean_ssh_key.default.fingerprint}"]
-}
-	
